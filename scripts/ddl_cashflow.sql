@@ -1,0 +1,19 @@
+CREATE TABLE TBL_CLIENTE (
+    id_cliente BIGINT IDENTITY(1,1) PRIMARY KEY,
+    nome NVARCHAR(100) NOT NULL,
+    cpf CHAR(11) UNIQUE,
+    criado_em DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
+);
+
+
+CREATE TABLE TBL_CAIXA (
+    id_caixa BIGINT IDENTITY(1,1) PRIMARY KEY,
+    data_transacao DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
+    tipo_transacao NVARCHAR(50) NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    descricao NVARCHAR(255),
+    id_cliente BIGINT NOT NULL,
+    CONSTRAINT fk_caixa_cliente FOREIGN KEY (id_cliente)
+        REFERENCES TBL_CLIENTE(id_cliente)
+        ON DELETE CASCADE
+);
