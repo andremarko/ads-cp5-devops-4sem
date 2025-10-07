@@ -154,7 +154,7 @@ env:
 #### Por fim, acesse o Swagger:
 
 ```
-https://{$WEBAPP_NAME}.azurewebsites.net/swagger-ui/index
+https://{$WEBAPP_NAME}.azurewebsites.net/swagger-ui/index.html
 ```
 
 ### Entidades do projeto - Modelo de dados
