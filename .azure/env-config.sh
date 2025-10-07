@@ -6,7 +6,7 @@ export DB_ADMIN="cashflow-admin"
 export DB_NAME="cashflow-backend-entities"
 export DB_PASSWORD="FluxoCaixa@2025"
 
-export WEBAPP_NAME="cashflow-mvc"
+export WEBAPP_NAME="cashflow-api-restful"
 export APP_SERVICE_PLAN="planCashFlow"
 
 export APP_INSIGHTS_NAME="ai-cashflow"
