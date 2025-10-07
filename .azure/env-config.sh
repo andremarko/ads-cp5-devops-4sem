@@ -9,6 +9,8 @@ export DB_PASSWORD="FluxoCaixa@2025"
 export WEBAPP_NAME="cashflow-mvc"
 export APP_SERVICE_PLAN="planCashFlow"
 
+export APP_INSIGHTS_NAME="ai-cashflow"
+
 export LOCATION="westus"
 export RUNTIME="JAVA:21-java21"
 export GITHUB_REPO="andremarko/ads-cp5-devops-4sem"
