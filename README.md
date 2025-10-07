@@ -7,7 +7,7 @@ API RESTful básica para cadastro e gerenciamento de um fluxo de caixa.
 ```bash
 ├── .azure
 │   ├── 01-create-sqlserver-instance.sh
-│   ├── 02-deploy-mottu-mapping.sh
+│   ├── 02-deploy-cashflow.sh
 │   ├── 03-set-gh-secrets.sh
 │   └── env-config.sh
 ├── scripts
