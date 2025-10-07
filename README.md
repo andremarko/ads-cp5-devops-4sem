@@ -185,9 +185,7 @@ curl -X PUT "http://localhost:8080/api/cliente/1" \
 ```bash
 curl -X DELETE "http://localhost:8080/api/cliente/1"
 ```
-
 ---
-
 ### Deploy no Azure Web App via GitHub Actions
 #### Scripts
 Ordem de execução:
@@ -211,7 +209,15 @@ chmod +x *.sh
 - Verifique estar logado no Azure CLI antes de executar os scripts;
 - Dê um fork deste projeto para executar o segundo script;
 - Mude a variável $GITHUB_REPO para o seu usuário e repositório (fork);
-- Verifique ter baixado e autenticado o GH CLI antes de executar o terceiro script.
+- Verifique ter baixado e autenticado o GH CLI antes de executar o terceiro script;
+- Por fim adicione ao .yaml criado no diretório `.github/workflows` as variáveis de ambiente (logo abaixo do run):
+```yaml
+run: mvn clean install 
+env:
+  JDBC_CONNECTION_STRING: ${{ secrets.JDBC_CONNECTION_STRING }}
+  DB_ADMIN: ${{ secrets.DB_ADMIN }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+```
 
 
 
