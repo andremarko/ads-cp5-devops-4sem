@@ -108,21 +108,23 @@ API RESTful básica para cadastro e gerenciamento de um fluxo de caixa.
 
 <img width="653" height="298" alt="image" src="https://github.com/user-attachments/assets/411e52fb-5f98-4309-8626-a74b3ba692d7" />
 
+---
+
 ### Endpoints
-**Caixa**
-#### 1️ Listar todos os fluxos de caixa
+#### Caixa
+##### 1️ Listar todos os fluxos de caixa
 ```bash
 curl -X GET "http://localhost:8080/api/caixa" \
      -H "Accept: application/json"
 ```
 
-#### 2️ Buscar um fluxo de caixa por ID
+##### 2️ Buscar um fluxo de caixa por ID
 ```bash
 curl -X GET "http://localhost:8080/api/caixa/1" \
      -H "Accept: application/json"
 ```
 
-#### 3️ Criar um fluxo de caixa
+##### 3️ Criar um fluxo de caixa
 ```
 curl -X POST "http://localhost:8080/api/caixa" \
      -H "Content-Type: application/json" \
@@ -133,7 +135,7 @@ curl -X POST "http://localhost:8080/api/caixa" \
            "idCliente": 1
          }'
 ```
-#### 4️ Atualizar um fluxo de caixa
+##### 4️ Atualizar um fluxo de caixa
 ```
 curl -X PUT "http://localhost:8080/api/caixa/1" \
      -H "Content-Type: application/json" \
@@ -144,23 +146,23 @@ curl -X PUT "http://localhost:8080/api/caixa/1" \
            "idCliente": 1
          }'
 ```
-#### 5 Deletar um fluxo de caixa
+##### 5 Deletar um fluxo de caixa
 ```bash
 curl -X DELETE "http://localhost:8080/api/caixa/1"
 ```
 ---
 **Cliente**
-#### 1️ Listar todos os clientes
+##### 1️ Listar todos os clientes
 ```bash
 curl -X GET "http://localhost:8080/api/cliente" \
      -H "Accept: application/json"
 ```
-#### 2 Buscar um cliente por ID
+##### 2 Buscar um cliente por ID
 ```bash
 curl -X GET "http://localhost:8080/api/cliente/1" \
      -H "Accept: application/json"
 ```
-#### 3 Criar um cliente
+##### 3 Criar um cliente
 ```bash
 curl -X POST "http://localhost:8080/api/cliente" \
      -H "Content-Type: application/json" \
@@ -169,7 +171,7 @@ curl -X POST "http://localhost:8080/api/cliente" \
            "cpf": "12345678901"
          }'
 ```
-#### 4 Atualizar um cliente
+##### 4 Atualizar um cliente
 ```bash
 curl -X PUT "http://localhost:8080/api/cliente/1" \
      -H "Content-Type: application/json" \
@@ -179,11 +181,38 @@ curl -X PUT "http://localhost:8080/api/cliente/1" \
          }'
 
 ```
-#### 5 Deletar um cliente
+##### 5 Deletar um cliente
 ```bash
 curl -X DELETE "http://localhost:8080/api/cliente/1"
 ```
 
-### Deploy no Azure Web App via GitHub Actions
+---
 
+### Deploy no Azure Web App via GitHub Actions
 #### Scripts
+Ordem de execução:
+- 01-create-sqlserver-instance.sh;
+- 02-deploy-cashflow.sh;
+- 03-set-gh-secrets.sh;
+- env-config.sh -> script de suporte
+
+#### Clone o projeto:
+```bash
+git clone https://github.com/andremarko/ads-cp5-devops-4sem.git
+cd ads-cp5-devops-4sem
+```
+#### Dê permissão de execução para todos os scripts
+```bash
+cd .azure
+chmod +x *.sh
+```
+#### Execute em ordem numérica (com exceção o env-config.sh, que não precisa ser executado)
+#### Importante!:
+- Verifique estar logado no Azure CLI antes de executar os scripts;
+- Dê um fork deste projeto para executar o segundo script;
+- Mude a variável $GITHUB_REPO para o seu usuário e repositório (fork);
+- Verifique ter baixado e autenticado o GH CLI antes de executar o terceiro script.
+
+
+
+
