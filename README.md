@@ -161,6 +161,13 @@ https://{$WEBAPP_NAME}.azurewebsites.net/swagger-ui/index
 
 <img width="653" height="298" alt="image" src="https://github.com/user-attachments/assets/411e52fb-5f98-4309-8626-a74b3ba692d7" />
 
+#### DDL das tabelas - ddl_cashflow.sql
+
+```
+cd scripts/
+ls
+ddl_cashflow.sql
+```
 ---
 
 ### Endpoints
